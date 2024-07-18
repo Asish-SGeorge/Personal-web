@@ -1,47 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asish S George</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- my custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
-
 <body>
-    <header class="header">
-        <a href="#" class="logo">Portfolio</a>
-        <nav class="navbar">
-            <a href="#" style="--i:1;" class="active">Home</a>
-            <a href="#" style="--i:2;">About</a>
-            <a href="#" style="--i:3;">Skills</a>
-            <a href="#" style="--i:4;">Portfolio</a>
-            <a href="#" style="--i:5;">Contact</a>
-        </nav>
-    </header>
-    <section class="home">
-        <div class="home-content">
-            <h3>Hello, It's Me</h3>
-            <h1>Asish S George</h1>
-            <h3>And I'm a <span class="multiple-text">Frontend Developer</span></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo mollitia error explicabo dolorum officia sint ducimus delectus? Aspernatur nemo temporibus reiciendis tempora, facere accusamus in rem animi, sequi aperiam quam.</p>
-            <div class="social-media">
-                <a href="https://www.facebook.com/asish.sunnygeorge" style="--i:1;"><i class='bx bxl-facebook'></i></a>
-                <a href="https://www.instagram.com/asishsgeorge/?utm_source=ig_web_button_share_sheet" style="--i:2;"><i class='bx bxl-instagram-alt' ></i></a>
-                <a href="https://github.com/Asish-SGeorge" style="--i:3;"><i class='bx bxl-github' ></i></a>
-                <a href="#" style="--i:4;"><i class='bx bxl-linkedin-square'></i></a>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Portfolio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" style="--i:1;" class="active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="--i:2;">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="--i:3;">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="--i:4;">Contact</a>
+                    </li>
+                </ul>
             </div>
-            <a href="#" class="btn">Download CV</a>
         </div>
+    </nav>
 
-        <div class="home-image">
-            <img src="Images/IMG_20240117_003123_911-removebg-preview.png" alt="">
+    <section class="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="home-content">
+                        <h3>Hello, It's Me</h3>
+                        <h1>Asish S George</h1>
+                        <h3>And I'm a <span class="multiple-text">Frontend Developer</span></h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo mollitia error explicabo dolorum officia sint ducimus delectus? Aspernatur nemo temporibus reiciendis tempora, facere accusamus in rem animi, sequi aperiam quam.</p>
+                        <div class="social-media">
+                            <a href="https://www.facebook.com/asish.sunnygeorge" style="--i:1;"><i class='bx bxl-facebook'></i></a>
+                            <a href="https://www.instagram.com/asishsgeorge/?utm_source=ig_web_button_share_sheet" style="--i:2;"><i class='bx bxl-instagram-alt' ></i></a>
+                            <a href="https://github.com/Asish-SGeorge" style="--i:3;"><i class='bx bxl-github' ></i></a>
+                            <a href="#" style="--i:4;"><i class='bx bxl-linkedin-square'></i></a>
+                        </div>
+                        <a href="#" class="btn">Download CV</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="home-image">
+                        <img src="Images/IMG_20240117_003123_911-removebg-preview.png" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <!-- Bootstrap JS and other scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-MCwA8BOeZznYF0XIdyc2x8WgDFeO2CRpGeGtBP18fpc+3PL0VIXf/CpWtKbTvX1S" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- my custom scripts -->
     <script src="script.js"></script>
 </body>
-
 </html>
