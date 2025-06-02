@@ -125,18 +125,21 @@
     <!-- contact section design -->
     <section class="contact" id="contact">
       <h2 class="heading">Contact <span>Me!</span></h2>
-      <form action="POST" data-netlify="true">
+      <form name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact">
+      
         <div class="input-box">
-          <input type="text" placeholder="Full Name">
-          <input type="email" placeholder="Email Address">
+          <input type="text" name="full-name" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
         </div>
         <div class="input-box">
-          <input type="number" placeholder="Mobile number">
-          <input type="text" placeholder="Email subject">
+          <input type="number" name="mobile" placeholder="Mobile Number" required>
+          <input type="text" name="subject" placeholder="Email Subject" required>
         </div>
-        <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+        <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
         <input type="submit" value="Send Message" class="btn">
       </form>
+      
 
     </section>
     <!-- footer design -->
