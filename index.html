@@ -23,6 +23,15 @@
   </head>
   <body>
     <div id="root"></div>
+    
+    <!-- Netlify forms hidden parser -->
+    <form name="contact" data-netlify="true" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="message" />
+    </form>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

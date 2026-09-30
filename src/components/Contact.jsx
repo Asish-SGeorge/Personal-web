@@ -73,13 +73,14 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="lg:col-span-6 lg:pl-12 flex flex-col justify-between h-full"
           >
-            <form className="space-y-12">
+            <form name="contact" method="POST" data-netlify="true" className="space-y-12">
+              <input type="hidden" name="form-name" value="contact" />
               <div className="relative">
                 <div className="flex justify-between items-center mb-2">
                   <label className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">Full Name</label>
                   <span className="text-slate-500 text-[10px]">*</span>
                 </div>
-                <input type="text" className="w-full bg-transparent border-b border-white/20 py-2 text-white focus:outline-none focus:border-white transition-colors text-lg" />
+                <input type="text" name="name" required className="w-full bg-transparent border-b border-white/20 py-2 text-white focus:outline-none focus:border-white transition-colors text-lg" />
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -88,14 +89,14 @@ export default function Contact() {
                     <label className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">Email</label>
                     <span className="text-slate-500 text-[10px]">*</span>
                   </div>
-                  <input type="email" className="w-full bg-transparent border-b border-white/20 py-2 text-white focus:outline-none focus:border-white transition-colors text-lg" />
+                  <input type="email" name="email" required className="w-full bg-transparent border-b border-white/20 py-2 text-white focus:outline-none focus:border-white transition-colors text-lg" />
                 </div>
                 <div className="relative">
                   <div className="flex justify-between items-center mb-2">
                     <label className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">Phone</label>
                     <span className="text-slate-500 text-[10px]">*</span>
                   </div>
-                  <input type="tel" className="w-full bg-transparent border-b border-white/20 py-2 text-white focus:outline-none focus:border-white transition-colors text-lg" />
+                  <input type="tel" name="phone" className="w-full bg-transparent border-b border-white/20 py-2 text-white focus:outline-none focus:border-white transition-colors text-lg" />
                 </div>
               </div>
 
@@ -104,11 +105,11 @@ export default function Contact() {
                   <label className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">Message</label>
                   <span className="text-slate-500 text-[10px]">*</span>
                 </div>
-                <input type="text" className="w-full bg-transparent border-b border-white/20 py-2 text-white focus:outline-none focus:border-white transition-colors text-lg" />
+                <input type="text" name="message" required className="w-full bg-transparent border-b border-white/20 py-2 text-white focus:outline-none focus:border-white transition-colors text-lg" />
               </div>
               
               <div className="flex justify-end pt-4">
-                <button type="button" className="text-white hover:text-slate-300 transition-colors group">
+                <button type="submit" className="text-white hover:text-slate-300 transition-colors group">
                   <FiArrowRight size={32} className="group-hover:translate-x-2 transition-transform duration-300" />
                 </button>
               </div>
