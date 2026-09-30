@@ -89,7 +89,7 @@ export default function Hero() {
           <PixelTransition
             firstContent={
               <div className="w-full h-full glass-panel flex items-center justify-center rounded-3xl relative overflow-hidden group-hover:scale-105 transition-transform duration-700">
-                <img src="/profile.jpg" className="w-full h-full object-cover opacity-90" alt="Asish S George" />
+                <img src={`${import.meta.env.BASE_URL}profile.jpg`} className="w-full h-full object-cover opacity-90" alt="Asish S George" />
               </div>
             }
             secondContent={
