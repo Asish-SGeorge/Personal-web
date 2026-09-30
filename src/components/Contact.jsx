@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiArrowRight } from 'react-icons/fi';
 import TrueFocus from './ReactBits/TrueFocus';
 import FoldText from './ReactBits/FoldText';
 
 export default function Contact() {
+  const [submitStatus, setSubmitStatus] = useState('idle');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitStatus('submitting');
+    
+    const myForm = e.target;
+    const formData = new FormData(myForm);
+    
+    fetch('/', {
+      method: 'POST',
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString()
+    })
+    .then(() => setSubmitStatus('success'))
+    .catch((error) => setSubmitStatus('error'));
+  };
+
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
       {/* Background glow */}
@@ -73,7 +91,7 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="lg:col-span-6 lg:pl-12 flex flex-col justify-between h-full"
           >
-            <form name="contact" method="POST" data-netlify="true" className="space-y-12">
+            <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-12">
               <input type="hidden" name="form-name" value="contact" />
               <div className="relative">
                 <div className="flex justify-between items-center mb-2">
@@ -108,8 +126,10 @@ export default function Contact() {
                 <input type="text" name="message" required className="w-full bg-transparent border-b border-white/20 py-2 text-white focus:outline-none focus:border-white transition-colors text-lg" />
               </div>
               
-              <div className="flex justify-end pt-4">
-                <button type="submit" className="text-white hover:text-slate-300 transition-colors group">
+              <div className="flex justify-end pt-4 items-center gap-4">
+                {submitStatus === 'success' && <span className="text-green-400 text-sm tracking-widest uppercase">Message Sent!</span>}
+                {submitStatus === 'error' && <span className="text-red-400 text-sm tracking-widest uppercase">Error sending message</span>}
+                <button type="submit" disabled={submitStatus === 'submitting'} className="text-white hover:text-slate-300 transition-colors group disabled:opacity-50">
                   <FiArrowRight size={32} className="group-hover:translate-x-2 transition-transform duration-300" />
                 </button>
               </div>
