@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import TextLoop from './ReactBits/TextLoop';
 import TextType from './ReactBits/TextType';
+import FoldText from './ReactBits/FoldText';
 
 export default function About() {
   const textRef = useRef(null);
@@ -57,7 +58,22 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-3xl font-bold text-white mb-6">Frontend Developer!</h3>
+            <h3 className="text-4xl md:text-5xl font-black text-white mb-8">
+              <FoldText
+                text="ABOUT ME"
+                splitBy="char"
+                hinge="top"
+                trigger="scroll"
+                duration={0.65}
+                stagger={0.05}
+                ease="power3.out"
+                perspective={700}
+                creaseShading={0.55}
+                fontSize="inherit"
+                fontWeight="inherit"
+                color="#ffffff"
+              />
+            </h3>
             {isInView && (
               <>
                 <TextType 
