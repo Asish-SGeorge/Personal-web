@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { FiDownload, FiGithub, FiLinkedin, FiInstagram } from 'react-icons/fi';
 import PixelTransition from './ReactBits/PixelTransition';
 import StaggeredText from './ReactBits/StaggeredText';
+import CursorWave from './ReactBits/CursorWave';
 import TechText from './ReactBits/TechText';
 import TextType from './ReactBits/TextType';
 import profileImg from '../assets/profile.jpg';
@@ -24,6 +25,7 @@ export default function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative pt-20 w-full">
       {/* Background Effects */}
+      <CursorWave />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/5 rounded-full blur-[120px] -z-10 animate-pulse" />
 
       <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
