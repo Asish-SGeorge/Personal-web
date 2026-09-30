@@ -5,6 +5,7 @@ import PixelTransition from './ReactBits/PixelTransition';
 import StaggeredText from './ReactBits/StaggeredText';
 import TechText from './ReactBits/TechText';
 import TextType from './ReactBits/TextType';
+import profileImg from '../assets/profile.jpg';
 
 export default function Hero() {
   const containerVariants = {
@@ -89,7 +90,7 @@ export default function Hero() {
           <PixelTransition
             firstContent={
               <div className="w-full h-full glass-panel flex items-center justify-center rounded-3xl relative overflow-hidden group-hover:scale-105 transition-transform duration-700">
-                <img src={`${import.meta.env.BASE_URL}profile.jpg`} className="w-full h-full object-cover opacity-90" alt="Asish S George" />
+                <img src={profileImg} className="w-full h-full object-cover opacity-90" alt="Asish S George" />
               </div>
             }
             secondContent={
