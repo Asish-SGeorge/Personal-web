@@ -87,7 +87,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.5, type: 'spring' }}
-          className="relative hidden lg:flex justify-center items-center w-full"
+          className="relative flex justify-center items-center w-full mt-10 lg:mt-0"
         >
           <PixelTransition
             firstContent={
