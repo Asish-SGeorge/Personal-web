@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import TextLoop from './ReactBits/TextLoop';
 import TextType from './ReactBits/TextType';
 import FoldText from './ReactBits/FoldText';
+import CodeBlockPreview from './CodeBlockPreview';
 
 export default function About() {
   const textRef = useRef(null);
@@ -34,20 +35,15 @@ export default function About() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           
-          {/* Decorative image / abstract shape */}
+          {/* Interactive Code Block Preview */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="relative h-[400px] w-full max-w-md mx-auto"
+            className="relative w-full max-w-md mx-auto z-10"
           >
-            <div className="absolute inset-0 bg-slate-800 rounded-3xl border border-white/10 rotate-3 transition-transform hover:rotate-0 duration-500" />
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-3xl backdrop-blur-sm border border-white/20 -rotate-3 transition-transform hover:rotate-0 duration-500 flex items-center justify-center p-8">
-              <p className="text-2xl font-black text-white/50 text-center leading-relaxed">
-                Code &<br/>AI Models
-              </p>
-            </div>
+            <CodeBlockPreview />
           </motion.div>
 
           {/* Text content */}
