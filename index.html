@@ -25,11 +25,13 @@
     <div id="root"></div>
     
     <!-- Netlify forms hidden parser -->
-    <form name="contact" data-netlify="true" hidden>
+    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="bot-field" />
       <input type="text" name="name" />
       <input type="email" name="email" />
       <input type="tel" name="phone" />
-      <input type="text" name="message" />
+      <textarea name="message"></textarea>
     </form>
 
     <script type="module" src="/src/main.jsx"></script>

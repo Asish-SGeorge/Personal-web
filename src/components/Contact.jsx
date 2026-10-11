@@ -19,8 +19,19 @@ export default function Contact() {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString()
     })
-    .then(() => setSubmitStatus('success'))
-    .catch((error) => setSubmitStatus('error'));
+      .then((response) => {
+        if (response.ok) {
+          setSubmitStatus('success');
+          myForm.reset();
+          setTimeout(() => setSubmitStatus('idle'), 5000);
+        } else {
+          setSubmitStatus('error');
+        }
+      })
+      .catch((error) => {
+        console.error('Form submission error:', error);
+        setSubmitStatus('error');
+      });
   };
 
   return (
@@ -91,8 +102,20 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="lg:col-span-6 lg:pl-12 flex flex-col justify-between h-full"
           >
-            <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-12">
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
+              className="space-y-12"
+            >
               <input type="hidden" name="form-name" value="contact" />
+              <p className="hidden">
+                <label>
+                  Don't fill this out if you're human: <input name="bot-field" />
+                </label>
+              </p>
               <div className="relative">
                 <div className="flex justify-between items-center mb-2">
                   <label className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">Full Name</label>
@@ -123,10 +146,16 @@ export default function Contact() {
                   <label className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">Message</label>
                   <span className="text-slate-500 text-[10px]">*</span>
                 </div>
-                <input type="text" name="message" required className="w-full bg-transparent border-b border-white/20 py-2 text-white focus:outline-none focus:border-white transition-colors text-lg" />
+                <textarea
+                  name="message"
+                  required
+                  rows={3}
+                  className="w-full bg-transparent border-b border-white/20 py-2 text-white focus:outline-none focus:border-white transition-colors text-lg resize-none"
+                />
               </div>
               
               <div className="flex justify-end pt-4 items-center gap-4">
+                {submitStatus === 'submitting' && <span className="text-blue-400 text-sm tracking-widest uppercase animate-pulse">Sending...</span>}
                 {submitStatus === 'success' && <span className="text-green-400 text-sm tracking-widest uppercase">Message Sent!</span>}
                 {submitStatus === 'error' && <span className="text-red-400 text-sm tracking-widest uppercase">Error sending message</span>}
                 <button type="submit" disabled={submitStatus === 'submitting'} className="text-white hover:text-slate-300 transition-colors group disabled:opacity-50">
